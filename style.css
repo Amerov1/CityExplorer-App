@@ -1,0 +1,29 @@
+
+#container{
+    padding: 10px 25em;
+}
+#btn{
+    font-size: 2em;;
+    background-color: hsla(240, 34%, 31%, 0.445);
+}
+#inOne{
+    font-size: 2em;;
+}
+.text1{
+    margin-top: 20px;
+    font-size: 2em;
+}
+#city{
+    margin-top: 50px;
+
+}
+#content{
+    margin: auto;
+    border-radius: 10px;
+   background: linear-gradient(180deg,hsla(240, 93%, 84%, 0.493),hsla(120, 22%, 47%, 0.753));
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+}
