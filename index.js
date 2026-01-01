@@ -97,12 +97,12 @@ const PopulationKey="your Key"//API Ninjas API
     {
         document.getElementById("body").classList.remove("darkmode");
     }
-    //uses googlemap to share location of a city.
+    // Updates the iframe to show the Google Maps location of the specified city.
     function setframe(city)
     {
     myframe.src=`https://www.google.com/maps?q=${city.split(", ")[0]}&output=embed`;
     }
-    // uses pixabay api to retrieve an image of a city
+    / Fetches a photo of the specified city from the Pixabay API and sets it as the source of the img element.
     function GetImage(cityname)
     {
         const url= `https://pixabay.com/api/?key=${ImgKey}&q=${cityname}, &image_type=photo`;
@@ -113,7 +113,8 @@ const PopulationKey="your Key"//API Ninjas API
                     } )
         .catch (err =>console.error("Error:",err))
     }
-    //retrive currency as well as flag of a country
+ // Retrieves currency information and the national flag for a given country using the Rest Countries API.
+// Then calls showCurrency() to display the results.
     function getCountryCurrency(countryName) {
     const url = `https://restcountries.com/v3.1/name/${encodeURIComponent(countryName)}`;
 
@@ -125,7 +126,7 @@ const PopulationKey="your Key"//API Ninjas API
         const currencies = country.currencies;
         const currencyCode = Object.keys(currencies)[0];
         const currency = currencies[currencyCode];
-
+// Pass currency details and flag image to the display function
         showCurrency(
             currency.name,
             currency.symbol,
@@ -140,7 +141,7 @@ document.getElementById("flag").src = flag;
 document.getElementsByClassName("currency-name")[0].textContent=name;
 document.getElementsByClassName("currency-symbol")[0].textContent=symbol;
 }
-//shows suggestions when uses starts typing
+//Displays a dropdown list of autocomplete suggestions as the user types.
 function showSuggestions(results) {
     suggestions.innerHTML = "";
         results.forEach(item => {
@@ -153,7 +154,7 @@ function showSuggestions(results) {
         });
         suggestions.appendChild(li);
     });}
-  // classnames each has an icon, that represents the weathercondition 
+  // Returns a Bootstrap icon class for the given weather ID.
     function getWeatherEmoji(id) {
         switch (true) {
             case (id >= 200 && id < 300):
@@ -173,7 +174,7 @@ function showSuggestions(results) {
                 return "❓"; // Unbekannt
         }
     }
-  //retrieve Data about the wearther in the given city
+ // Fetches current weather data for a city from OpenWeatherMap API
     async function getWeatherData(city)
     {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${WeatherKey}&units=metric`;
@@ -239,7 +240,7 @@ function showSuggestions(results) {
 
         chart.draw(data, options);
     }
-    // retrieve informatioon about specific city using wikipedia api
+    // Fetches information about a city from the Wikipedia API.
     async function getCityText(city) {
     const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(city)}`;
     const res = await fetch(url);
