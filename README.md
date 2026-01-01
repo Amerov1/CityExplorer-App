@@ -1,6 +1,7 @@
 # CityExplorer App
 
-CityExplorer is a web application that displays detailed and dynamic information based on a selected city.
+CityExplorer is an extended version of a weather application that evolved into a **city information web application**.
+It provides weather data, population statistics, maps, images, and country details based on the selected city.
 
 The application provides a modern user interface with support for **light and dark mode**.
 
