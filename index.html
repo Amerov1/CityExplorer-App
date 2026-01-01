@@ -2,21 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">   
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>My City</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="chart.js"></script>
 </head>
-<body>
-    <form id="container">
-        <input id="inOne" type="text" placeholder="Enter the city">
-        <button type="submit" id="btn"> Search</button>
-    </form>
-    <div id="content">
-<!--        <h1 id="city">City Name</h1>
-        <p class ="text1" id="temp">Tempratur</p>
-        <p class ="text1" id="hum">Humidity :75%  </p>
-        <p class ="text1" id="emoji"> 😉</p>
-    -->
+<body id="body">
+    <div class="mySearchEngine">
+        <input id="inputId" type="text" placeholder="Enter the city">
+        <i id="iconSearch" class="bi bi-search"></i>
+        <ul id="suggestions"></ul>
     </div>
+    <button id="mode">
+        <i class="bi bi-moon-stars"></i>
+       <i class="bi bi-brightness-high-fill"></i>
+    </button>
+    <div class="mycontent">
+        <div class="card-body" id="ImageContainer">
+            <img id="CityImg" alt="Nothing"> 
+        </div>
+        <div class="card-body" id="WeatherCard" style="display: none" >
+            <i class="bi bi-question" id="iconWeather" ></i> 
+            <div id="tempID" ></div>
+            <div id="windID"></div>
+            <div id="descriptionID"></div>
+        </div>
+        <div id="LandName">
+            <img src="" id="flag" alt="Flag">
+        </div>
+        <div id="MoreInfo">
+
+        </div>
+        <div id="LandCurrency">
+            <strong class="currency-name"></strong>
+            <span class="currency-symbol"></span>
+        </div>
+        <div id="Population">
+            <div id="curve_chart"></div>
+        </div>
+        <div id="Map">
+              <iframe
+                id="myframe"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="">
+              </iframe>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>

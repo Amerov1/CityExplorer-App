@@ -1,29 +1,207 @@
-
-#container{
-    padding: 10px 25em;
+:root{
+--base-color:white;
+--base-variant:rgb(173, 168, 168);
+--text-color:black;
+--secondary-text:#232738;
+--primary-color:#3a435d;
+--accent-color:#0071ff;
 }
-#btn{
-    font-size: 2em;;
-    background-color: hsla(240, 34%, 31%, 0.445);
+.darkmode{
+  --base-color: #121212;
+  --base-variant: #1e1e1e;
+  --text-color: #e0e0e0;
+  --secondary-text: #a0a0a0;
+  --primary-color: #3a435d; 
+  --accent-color: #3399ff;
 }
-#inOne{
-    font-size: 2em;;
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
-.text1{
-    margin-top: 20px;
-    font-size: 2em;
+body{
+    display: grid;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(7,minmax(100px, auto));
 }
-#city{
-    margin-top: 50px;
-
-}
-#content{
-    margin: auto;
-    border-radius: 10px;
-   background: linear-gradient(180deg,hsla(240, 93%, 84%, 0.493),hsla(120, 22%, 47%, 0.753));
-    width: 50%;
-    height: 50%;
+   /* --Header--*/
+/*Search Engine */
+.mySearchEngine{
+    position: relative;
+    margin: 1em 4em;
+    grid-area:1 / 1 / 2 / 3 ;
     display: flex;
-    flex-direction: column;
-    align-items:  center;
+    width:80%;
+    border-radius: 25em;
+    border: 1px solid var(--secondary-text);
+  background-color: var(--base-variant);
+}
+#iconWeather
+{
+    display: block;
+}
+#iconSearch{
+    margin-right: 14px;
+    align-self: center;
+    font-size: 2em;
+    color: var(--accent-color);
+}
+#inputId {
+    width: 100%;
+    margin-left: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+#suggestions {
+    border: 1px solid var(--muted-border);
+    display: none;
+    position: absolute;
+  background: var(--base-color);
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin-top: 2.3em;
+    z-index: 1;
+}
+
+#suggestions li {
+    padding: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+  background: var(--primary-color);
+}
+/*Mode switch */
+#mode{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    border: 1px solid var(--secondary-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25px;
+    right: 200px;
+    cursor: pointer;
+}
+#mode i
+{
+    color: var(--text-color);
+}
+#mode i:last-child
+{
+    display: none;
+}
+.darkmode #mode i:first-child
+{
+    display: none;
+}
+.darkmode #mode i:last-child
+{
+    display: block;
+}
+/*--Content--*/
+.mycontent{
+    display: grid;
+    grid-gap: 10px;
+    grid-area: 2 / 1 / 11 / 4;
+    margin: 1rem;
+    grid-template-rows: repeat(6, minmax(100px,250px));
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--secondary-text);
+    background: var(--base-variant);
+}
+#ImageContainer
+{
+    grid-area: 1 / 1 / 4 / 4;
+    border: 1px solid var(--secondary-text);
+    border-radius: 25px;      
+    overflow: hidden;
+}
+#ImageContainer img{
+    width: 100%;
+    display: block;
+    object-fit: cover; 
+}
+#WeatherCard{
+    grid-area: 4 / 1 / 5 / 3;
+    margin: auto 10px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border-radius: 1em;
+    padding: 1rem;
+    width: 60%;
+    background-color: var(--base-color);
+    border: 1px solid var(--secondary-text);
+    color: var(--secondary-text);
+    font-size: 2rem;
+    padding: 10px;
+}
+#LandName
+{
+    grid-area: 5 / 1 / 6 / 2;  
+    border-radius: 25px;
+    border: 1px solid var(--secondary-text);
+    overflow: hidden;
+}
+#MoreInfo
+{
+    grid-area: 4 / 3 / 6 / 4; 
+    font-size: 1.30rem;
+    background-color: var(--base-color);
+    border: 1px solid var(--secondary-text);
+    border-radius: 25px;
+    padding: 1rem;
+    
+}
+#LandCurrency
+{
+    font-weight: bold;
+    padding: 1.5em 2em;
+    color: var(--text-color);
+    font-size: 3rem;
+    grid-area: 5 / 2 / 6 / 3;  
+}
+#flag {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#Population
+{
+    grid-area: 6 / 1 / 7 / 3; 
+    border: 1px solid var(--secondary-text);
+    border-radius: 10px;
+    overflow: hidden;
+}
+#curve_chart
+{
+    height: 250px;
+    background-color: var(--base-color);
+}
+#myframe{
+    width:100%;
+    height:100%;
+}
+#Map
+{
+    
+    grid-area: 6 / 3 / 7 / 4; 
+    border-radius: 10px;
+    border: 1px solid var(--secondary-text);
+    overflow: hidden;
 }
